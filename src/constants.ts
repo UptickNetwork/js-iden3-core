@@ -49,7 +49,8 @@ export const Blockchain: { [k: string]: string } = {
   Privado: 'privado',
   Unknown: 'unknown',
   NoChain: '',
-  ReadOnly: 'readonly'
+  ReadOnly: 'readonly',
+  Uptick: 'Uptick'
 };
 
 export const NetworkId: { [k: string]: string } = {
@@ -60,7 +61,8 @@ export const NetworkId: { [k: string]: string } = {
   Sepolia: 'sepolia',
   Test: 'test',
   Unknown: 'unknown',
-  NoNetwork: ''
+  NoNetwork: '',
+  Origin: 'origin',
 };
 
 export const DidMethod: { [k: string]: string } = {
@@ -83,7 +85,9 @@ export const ChainIds: { [key: string]: number } = {
   [`${Blockchain.ZkEVM}:${NetworkId.Main}`]: 1101,
   [`${Blockchain.ZkEVM}:${NetworkId.Test}`]: 1442,
   [`${Blockchain.Privado}:${NetworkId.Main}`]: 21000,
-  [`${Blockchain.Privado}:${NetworkId.Test}`]: 21001
+  [`${Blockchain.Privado}:${NetworkId.Test}`]: 21001,
+  [`${Blockchain.Uptick}:${NetworkId.Main}`]: 117,
+  [`${Blockchain.Uptick}:${NetworkId.Origin}`]: 1170
 };
 
 export const DidMethodByte: { [key: string]: number } = {
@@ -103,7 +107,9 @@ const blockchainNetworkMap = {
   [`${Blockchain.ZkEVM}:${NetworkId.Main}`]: 0b0011_0000 | 0b0000_0001,
   [`${Blockchain.ZkEVM}:${NetworkId.Test}`]: 0b0011_0000 | 0b0000_0010,
   [`${Blockchain.Privado}:${NetworkId.Main}`]: 0b1010_0000 | 0b0000_0001,
-  [`${Blockchain.Privado}:${NetworkId.Test}`]: 0b1010_0000 | 0b0000_0010
+  [`${Blockchain.Privado}:${NetworkId.Test}`]: 0b1010_0000 | 0b0000_0010,
+  [`${Blockchain.Uptick}:${NetworkId.Main}`]: 0b1011_0000 | 0b0000_0001,
+  [`${Blockchain.Uptick}:${NetworkId.Origin}`]: 0b1011_0000 | 0b0000_0010
 };
 
 // DIDMethodNetwork is map for did methods and their blockchain networks
